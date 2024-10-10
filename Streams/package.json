@@ -1,0 +1,12 @@
+{
+  "name": "streams",
+  "version": "1.0.0",
+  "main": "writeMany.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dtstreams.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
