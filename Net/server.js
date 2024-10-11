@@ -1,29 +1,28 @@
 import { createServer } from "node:net";
+import { randomUUID } from "node:crypto";
 
-const clientSockets = [];
+let clientSockets = [];
 
-const server = createServer((socket) => {
-  clientSockets.push(socket);
+const server = createServer();
 
-  server.on("connection", () => {
-    console.log("New Client Connected");
-  });
+server.on("connection", (socket) => {
+  const socketId = randomUUID();
 
-  socket.on("error", () => {
-    clientSockets.filter((clientSocket) => {
-      if (clientSocket == socket) {
-        return false;
-      }
-    });
-  });
+  clientSockets.push({ id: socketId, socket });
+  socket.write(`${socketId}-message-You'r now Connected`);
+  console.log("New Client Connected");
 
   socket.on("data", (chunks) => {
     clientSockets?.map((clientSocket) => {
-      clientSocket.write(chunks);
+      clientSocket.socket.write(chunks);
     });
+  });
+
+  socket.on("error", () => {
+    console.log("Some Error!");
   });
 });
 
 server.listen({ host: "127.0.0.1", port: 8000 }, () => {
-  console.log(`Server is ON! @`, server.address());
+  console.log(`Server is On!`);
 });
