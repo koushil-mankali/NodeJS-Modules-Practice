@@ -5,7 +5,19 @@ let clientSockets = [];
 
 const server = createServer();
 
+// import { BlockList } from "node:net";
+
+// const blockList = new BlockList();
+
+// blockList.addAddress("127.0.0.1");
+
+// console.log("Rules: ", blockList.rules);
+
 server.on("connection", (socket) => {
+  // console.log(socket.remoteAddress);
+  // if (blockList.check(socket.remoteAddress)) {
+  //   socket.end(`-message-User You'r Blocked!`);
+  // }
   const socketId = randomUUID();
 
   clientSockets?.map((client) => {

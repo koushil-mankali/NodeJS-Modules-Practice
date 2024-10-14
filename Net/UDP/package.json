@@ -1,0 +1,17 @@
+{
+    "name": "udp",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "server": "node server.js",
+        "client": "node client.js",
+        "start": "npm run server && client"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@types/node": "^22.7.5"
+    }
+}
