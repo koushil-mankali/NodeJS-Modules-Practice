@@ -7,8 +7,16 @@ const serverObj = new Server();
 serverObj.on("connection", (socket) => {
   console.log("New Connection!");
 
+  socket.on("data", (data) => {
+    console.log("DATA:", data.toString("utf8"));
+  });
+
   serverObj.getConnections((err, cnt) => {
     console.log("Count", cnt);
+  });
+
+  socket.on("error", (er) => {
+    console.log("Socket Err:", er);
   });
 
   console.log("listening bool", serverObj.listening);
