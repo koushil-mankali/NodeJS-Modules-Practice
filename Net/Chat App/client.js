@@ -30,31 +30,34 @@ const ask = async (socket, userId) => {
   await clearLine(0);
 };
 
-const socket = createConnection({ host: "127.0.0.1", port: 8000 }, async () => {
-  let socketId = null;
+const socket = createConnection(
+  { host: "192.169.1.181", port: 8000 },
+  async () => {
+    let socketId = null;
 
-  socket.on("data", async (chunks) => {
-    console.log();
-    await moveCursor(0, -1);
-    await clearLine(0);
-    const data = chunks?.toString("utf8");
-    const dataArr = data?.split("-message-");
-    if (!socketId) {
-      socketId = dataArr?.[0];
-    }
-    const userId = dataArr?.[0];
-    const message = dataArr?.[1];
-    if (socketId && userId == socketId) {
-      console.log("Me:", message);
-    } else {
-      const shortUderId = userId?.substring(0, 4);
-      console.log(
-        userId ? `User ${shortUderId} : ${message}` : `Server : ${message}`
-      );
-    }
-    ask(socket, socketId);
-  });
-});
+    socket.on("data", async (chunks) => {
+      console.log();
+      await moveCursor(0, -1);
+      await clearLine(0);
+      const data = chunks?.toString("utf8");
+      const dataArr = data?.split("-message-");
+      if (!socketId) {
+        socketId = dataArr?.[0];
+      }
+      const userId = dataArr?.[0];
+      const message = dataArr?.[1];
+      if (socketId && userId == socketId) {
+        console.log("Me:", message);
+      } else {
+        const shortUderId = userId?.substring(0, 4);
+        console.log(
+          userId ? `User ${shortUderId} : ${message}` : `Server : ${message}`
+        );
+      }
+      ask(socket, socketId);
+    });
+  }
+);
 
 socket.on("close", async () => {
   console.log();

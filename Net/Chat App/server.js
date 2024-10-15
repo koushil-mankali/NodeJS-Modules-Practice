@@ -43,6 +43,6 @@ server.on("connection", (socket) => {
   });
 });
 
-server.listen({ host: "127.0.0.1", port: 8000 }, () => {
+server.listen({ host: "192.169.1.181", port: 8000 }, () => {
   console.log(`Server is On!`);
 });
