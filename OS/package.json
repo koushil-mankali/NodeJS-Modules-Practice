@@ -1,0 +1,12 @@
+{
+  "name": "osmodule",
+  "version": "1.0.0",
+  "main": "osmodule.js",
+  "type": "module",
+  "scripts": {
+    "start": "node osmodule.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
