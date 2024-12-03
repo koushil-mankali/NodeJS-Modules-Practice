@@ -1,0 +1,13 @@
+{
+  "name": "process",
+  "version": "1.0.0",
+  "main": "processjs.js",
+  "type": "module",
+  "scripts": {
+    "start": "node  processjs.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
