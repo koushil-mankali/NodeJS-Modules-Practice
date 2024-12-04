@@ -1,0 +1,13 @@
+{
+  "name": "childprocess",
+  "version": "1.0.0",
+  "main": "childprocessjs.js",
+  "type": "module",
+  "scripts": {
+    "start": "node childprocessjs.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
