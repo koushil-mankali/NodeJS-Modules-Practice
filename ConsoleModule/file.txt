@@ -1,0 +1,16 @@
+Hi from custom!
+Error: Custom error!
+    at file:///D:/PERSONAL/NodeJs/ConsoleModule/index.js:14:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:547:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+default: 1
+default: 2
+Custom warning!
+Trace: Custom Trace
+    at file:///D:/PERSONAL/NodeJs/ConsoleModule/index.js:19:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:547:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+time: 0.004ms
+time: 0.117ms
