@@ -93,3 +93,11 @@ console.log("Schedular Yeild Ran");
 
 await scheduler.wait(3000);
 console.log("Schedular Wait Ran");
+
+process.nextTick(
+  (p1, p2) => {
+    console.log("Next Tick Ran: ", "p1 ", p1, "p2 ", p2);
+  },
+  "param1",
+  "param2"
+);
